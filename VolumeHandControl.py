@@ -36,12 +36,12 @@ volPer = 0
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
-    lmlist = detector.findPosition(img, draw=False)
-    if len(lmlist) != 0:
-        #print(lmlist[4],lmlist[8])
+    lmList = detector.findPosition(img, draw=False)
+    if len(lmList) != 0:
+        #print(lmListtt[4],lmListtt[8])
 
-        x1, y1 = lmlist[4][1], lmlist[4][2]
-        x2, y2 = lmlist[8][1], lmlist[8][2]
+        x1, y1 = lmList[4][1], lmList[4][2]
+        x2, y2 = lmList[8][1], lmList[8][2]
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
 
         cv2.circle(img, (x1,y1), 15, (255, 0, 255), cv2.FILLED)        
